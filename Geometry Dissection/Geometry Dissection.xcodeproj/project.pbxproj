@@ -15,6 +15,7 @@
 		2B55BAB41DD92FEF00B17EFE /* Geometry_DissectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BAB31DD92FEF00B17EFE /* Geometry_DissectionTests.swift */; };
 		2B55BABF1DD92FEF00B17EFE /* Geometry_DissectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BABE1DD92FEF00B17EFE /* Geometry_DissectionUITests.swift */; };
 		2B55BACD1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */; };
+		2B55BAD11DD940CC00B17EFE /* SCNNode+NodeComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,9 @@
 		2B55BABE1DD92FEF00B17EFE /* Geometry_DissectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry_DissectionUITests.swift; sourceTree = "<group>"; };
 		2B55BAC01DD92FEF00B17EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNScene+PrimitivesSamples.swift"; sourceTree = "<group>"; };
+		2B55BACE1DD940CB00B17EFE /* Geometry Dissection-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Geometry Dissection-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B55BACF1DD940CC00B17EFE /* SCNNode+NodeComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCNNode+NodeComponents.h"; sourceTree = "<group>"; };
+		2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCNNode+NodeComponents.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +106,13 @@
 				2B55BA9E1DD92FEF00B17EFE /* AppDelegate.swift */,
 				2B55BAA01DD92FEF00B17EFE /* ViewController.swift */,
 				2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */,
+				2B55BACF1DD940CC00B17EFE /* SCNNode+NodeComponents.h */,
+				2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */,
 				2B55BAA21DD92FEF00B17EFE /* Main.storyboard */,
 				2B55BAA51DD92FEF00B17EFE /* Assets.xcassets */,
 				2B55BAA71DD92FEF00B17EFE /* LaunchScreen.storyboard */,
 				2B55BAAA1DD92FEF00B17EFE /* Info.plist */,
+				2B55BACE1DD940CB00B17EFE /* Geometry Dissection-Bridging-Header.h */,
 			);
 			path = "Geometry Dissection";
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 					2B55BA9A1DD92FEF00B17EFE = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = TW8SJXYFP5;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					2B55BAAE1DD92FEF00B17EFE = {
@@ -265,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B55BAD11DD940CC00B17EFE /* SCNNode+NodeComponents.m in Sources */,
 				2B55BACD1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift in Sources */,
 				2B55BAA11DD92FEF00B17EFE /* ViewController.swift in Sources */,
 				2B55BA9F1DD92FEF00B17EFE /* AppDelegate.swift in Sources */,
@@ -419,11 +428,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = TW8SJXYFP5;
 				INFOPLIST_FILE = "Geometry Dissection/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Geometry Dissection/Geometry Dissection-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -432,11 +444,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = TW8SJXYFP5;
 				INFOPLIST_FILE = "Geometry Dissection/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Geometry Dissection/Geometry Dissection-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

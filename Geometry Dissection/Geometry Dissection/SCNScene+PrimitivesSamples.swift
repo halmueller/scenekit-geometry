@@ -92,17 +92,31 @@ extension SCNScene {
 		box.name = "regular box"
 
 		let geometries = [capsule, standardSphere, tube, geodesicSphere, pyramid, pyramid2, text, plane, cone1, cone2, torus, cylinder, box, chamferedBox]
+
+		let pointCloudMaterial = SCNMaterial()
+		pointCloudMaterial.isDoubleSided = true
+		pointCloudMaterial.diffuse.contents = MyColor.magenta
+		pointCloudMaterial.specular.contents = MyColor.white
+
 		var index = 0
 		let angleIncrement = 2.0 * M_PI/Double(geometries.count)
+
 		for geometry in geometries {
 			geometry.materials = materials
 			let node = SCNNode(geometry: geometry)
+			node.name = geometry.name
 			let angle = CGFloat(angleIncrement * Double(index))
 			let x = carouselRadius * cos(angle)
 			let y = carouselRadius * sin(angle)
 			node.position = SCNVector3Make(Float(x), 0, Float(y))
 			node.eulerAngles.y = Float(-1.0 * angle)
 			carousel.addChildNode(node)
+			if let verticesNode = node.vertices() {
+				carousel.addChildNode(verticesNode)
+				verticesNode.geometry?.firstMaterial = pointCloudMaterial
+				verticesNode.position = SCNVector3Make(Float(x), Float(objectSize * 2), Float(y))
+				verticesNode.eulerAngles = node.eulerAngles
+			}
 			index += 1
 		}
 
