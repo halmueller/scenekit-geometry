@@ -90,12 +90,18 @@ extension SCNScene {
 		let box = SCNBox(width: objectSize/2, height: objectSize, length: objectSize, chamferRadius: 0)
 		box.name = "regular box"
 
-		let geometries = [capsule, standardSphere, tube, geodesicSphere, pyramid, pyramid2, text, plane, cone1, cone2, torus, cylinder, box, chamferedBox]
+		//let geometries = [capsule, standardSphere, tube, geodesicSphere, pyramid, pyramid2, text, plane, cone1, cone2, torus, cylinder, box, chamferedBox]
+		let geometries = [pyramid, box]
 
 		let pointCloudMaterial = SCNMaterial()
 		pointCloudMaterial.isDoubleSided = true
 		pointCloudMaterial.diffuse.contents = MyColor.magenta
 		pointCloudMaterial.specular.contents = MyColor.white
+
+		let wireframeMaterial = SCNMaterial()
+		wireframeMaterial.isDoubleSided = true
+		wireframeMaterial.diffuse.contents = MyColor.yellow
+		wireframeMaterial.specular.contents = MyColor.white
 
 		var index = 0
 		let angleIncrement = 2.0 * M_PI/Double(geometries.count)
@@ -110,11 +116,17 @@ extension SCNScene {
 			node.position = SCNVector3Make(MySCNFloat(x), 0, MySCNFloat(y))
 			node.eulerAngles.y = MySCNFloat(-1.0 * angle)
 			carousel.addChildNode(node)
-			if let verticesNode = node.vertices() {
-				carousel.addChildNode(verticesNode)
-				verticesNode.geometry?.firstMaterial = pointCloudMaterial
-				verticesNode.position = SCNVector3Make(MySCNFloat(x), MySCNFloat(objectSize * 2), MySCNFloat(y))
-				verticesNode.eulerAngles = node.eulerAngles
+//			if let verticesNode = node.vertices() {
+//				carousel.addChildNode(verticesNode)
+//				verticesNode.geometry?.firstMaterial = pointCloudMaterial
+//				verticesNode.position = SCNVector3Make(MySCNFloat(x), MySCNFloat(objectSize * 2), MySCNFloat(y))
+//				verticesNode.eulerAngles = node.eulerAngles
+//			}
+			if let wireframeNode = node.wireframe() {
+				carousel.addChildNode(wireframeNode)
+				wireframeNode.geometry?.firstMaterial = wireframeMaterial
+				wireframeNode.position = SCNVector3Make(MySCNFloat(x), MySCNFloat(objectSize * -2), MySCNFloat(y))
+				wireframeNode.eulerAngles = node.eulerAngles
 			}
 			index += 1
 		}
