@@ -127,6 +127,7 @@
 		//NSLog(@"%f %f %f", x, y, z);
 	}
 
+	NSMutableArray *lineGeometries = [NSMutableArray new];
 	for (SCNGeometryElement *element in geometry.geometryElements) {
 		NSLog(@"%@ primitiveCount %zd primitiveType %zd", element, element.primitiveCount, element.primitiveType);
 		NSLog(@"%zd bytesPerIndex", element.bytesPerIndex);
@@ -142,9 +143,12 @@
 //
 //		NSLog(@"byteRange location %zd length %zd", byteRange.location, byteRange.length);
 
+
+		UInt8 endpointIndices[2 * element.primitiveCount];
+		NSInteger endpointCount = 0;
 		// from http://stackoverflow.com/questions/29562618/scenekit-extraire-data-from-scngeometryelement
 		// (assumes Triangles)
-		if (element.primitiveCount == SCNGeometryPrimitiveTypeTriangles) {
+		if (element.primitiveType == SCNGeometryPrimitiveTypeTriangles) {
 			NSInteger bytesPerPrimitive = element.bytesPerIndex * 3;
 			for (int indexPrimitive = 0; indexPrimitive < element.primitiveCount; indexPrimitive++) {
 				UInt16 array[3];
@@ -155,9 +159,24 @@
 				[element.data getBytes:&array range:elementByteRange];
 
 				NSLog(@"element %zd: %zd %zd %zd", indexPrimitive, array[0], array[1], array[2]);
+				endpointIndices[endpointCount] = array[0];
+				endpointIndices[endpointCount+1] = array[1];
+				endpointIndices[endpointCount+2] = array[1];
+				endpointIndices[endpointCount+3] = array[2];
+				endpointIndices[endpointCount+4] = array[2];
+				endpointIndices[endpointCount+5] = array[0];
+				endpointCount += 6;
 			}
+//			for (int endpointIndex = 0; endpointIndex < 2*element.primitiveCount; endpointIndex++) {
+//				NSLog(@"%zd", endpointIndices[endpointIndex]);
+//			}
 		}
-
+		NSData *linesData = [NSData dataWithBytes:endpointIndices length:endpointCount * sizeof(UInt8)];
+		SCNGeometryElement *linesElement = [SCNGeometryElement geometryElementWithData:linesData
+																		 primitiveType:SCNGeometryPrimitiveTypeLine
+																		primitiveCount:endpointCount/2
+																		 bytesPerIndex:sizeof(UInt8)];
+		[lineGeometries addObject:linesElement];
 	}
 
 	NSData *vertexData = [NSData dataWithBytes:vertexIndices length:vertexCount * sizeof(int)];
@@ -166,7 +185,7 @@
 																	 primitiveCount:vertexCount
 																	  bytesPerIndex:sizeof(int)];
 	SCNGeometrySource *verticesSource = [SCNGeometrySource geometrySourceWithVertices:vertices count:vertexCount];
-	SCNGeometry *verticesGeometry = [SCNGeometry geometryWithSources:@[verticesSource] elements:@[vertexElement]];
+	SCNGeometry *verticesGeometry = [SCNGeometry geometryWithSources:@[verticesSource] elements:lineGeometries];
 	SCNNode *resultNode = [SCNNode nodeWithGeometry:verticesGeometry];
 	return resultNode;
 }
