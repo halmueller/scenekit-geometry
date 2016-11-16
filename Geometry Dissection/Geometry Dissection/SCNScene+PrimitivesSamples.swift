@@ -41,9 +41,6 @@ extension SCNScene {
 		let carousel = SCNNode()
 		carousel.name = "carousel"
 		carousel.position = SCNVector3Make(0, Float(objectSize), 0)
-		let rotate = SCNAction.repeatForever(SCNAction.rotateBy(x: 0.0, y: CGFloat(M_PI), z: 0, duration: 20.0))
-		carousel.runAction(rotate)
-		rootNode.addChildNode(carousel)
 
 		let capsule = SCNCapsule(capRadius: CGFloat(quarterObject), height: objectSize)
 		capsule.name = "capsule"
@@ -119,6 +116,13 @@ extension SCNScene {
 			}
 			index += 1
 		}
+
+		//let finalCarousel = carousel.flattenedClone()
+		let finalCarousel = carousel
+		
+		let rotate = SCNAction.repeatForever(SCNAction.rotateBy(x: 0.0, y: CGFloat(M_PI), z: 0, duration: 20.0))
+		finalCarousel.runAction(rotate)
+		rootNode.addChildNode(finalCarousel)
 
 		return result
 	}
