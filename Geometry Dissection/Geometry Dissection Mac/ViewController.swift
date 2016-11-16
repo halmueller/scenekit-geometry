@@ -1,15 +1,15 @@
 //
 //  ViewController.swift
-//  Geometry Dissection
+//  Geometry Dissection Mac
 //
-//  Created by Hal Mueller on 11/13/16.
+//  Created by Hal Mueller on 11/15/16.
 //  Copyright © 2016 Hal Mueller. All rights reserved.
 //
 
-import UIKit
+import Cocoa
 import SceneKit
 
-class ViewController: UIViewController {
+class ViewController: NSViewController {
 
 	let debugOptionSets : [SCNDebugOptions] = [[],
 	                                           [.showWireframe, .showBoundingBoxes],
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 		let sceneView = self.view as! SCNView
 		sceneView.allowsCameraControl = true
 		sceneView.autoenablesDefaultLighting = true
-		sceneView.backgroundColor = UIColor.black
+		sceneView.backgroundColor = NSColor.black
 
 		//		sceneView.debugOptions =
 		sceneView.debugOptions = debugOptionSets[debugOptionIndex]
@@ -35,12 +35,7 @@ class ViewController: UIViewController {
 		
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-	@IBAction func cycleDebugOptions(_ sender: UITapGestureRecognizer) {
+	@IBAction func cycleDebugOptions(_ sender: Any) {
 		let sceneView = self.view as! SCNView
 
 		debugOptionIndex += 1

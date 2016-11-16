@@ -9,21 +9,25 @@
 #import "SCNNode+NodeComponents.h"
 #import <GLKit/GLKMath.h>
 
+#if TARGET_OS_IPHONE
+#define NSColor UIColor
+#endif
+
 @implementation SCNNode (NodeComponents)
 - (nullable SCNNode *)verticesNode;
 {
-	// David  Rönnqvist
-	// http://stackoverflow.com/questions/17250501/extracting-vertices-from-scenekit?rq=1
+		// David  Rönnqvist
+		// http://stackoverflow.com/questions/17250501/extracting-vertices-from-scenekit?rq=1
 
 	SCNGeometry *geometry = self.geometry;
-	
-	// Get the vertex sources
+
+		// Get the vertex sources
 	NSArray *vertexSources = [geometry geometrySourcesForSemantic:SCNGeometrySourceSemanticVertex];
 
-//	for (SCNGeometrySource *source in vertexSources) {
-//		NSLog(@"source %@ %zd", source, source.vectorCount);
-//	}
-	// Get the first source
+		//	for (SCNGeometrySource *source in vertexSources) {
+		//		NSLog(@"source %@ %zd", source, source.vectorCount);
+		//	}
+		// Get the first source
 	SCNGeometrySource *vertexSource = vertexSources[0]; // TODO: Parse all the sources
 
 	NSInteger stride = vertexSource.dataStride; // in bytes
@@ -36,39 +40,101 @@
 	SCNVector3 vertices[vectorCount]; // A new array for vertices
 	int indices[vectorCount];
 
-	// for each vector, read the bytes
-	for (int i=0; i<vectorCount; i++) {
+		// for each vector, read the bytes
+	for (int i=0; i < vectorCount; i++) {
 
-		// Assuming that bytes per component is 4 (a float)
-		// If it was 8 then it would be a double (aka CGFloat)
+			// Assuming that bytes per component is 4 (a float)
+			// If it was 8 then it would be a double (aka CGFloat)
 		float vectorData[componentsPerVector];
 
-		// The range of bytes for this vector
+			// The range of bytes for this vector
 		NSRange byteRange = NSMakeRange(i*stride + offset, // Start at current stride + offset
 										bytesPerVector);   // and read the length of one vector
 
-		// Read into the vector data buffer
+			// Read into the vector data buffer
 		[vertexSource.data getBytes:&vectorData range:byteRange];
 
-		// At this point you can read the data from the float array
+			// At this point you can read the data from the float array
 		float x = vectorData[0];
 		float y = vectorData[1];
 		float z = vectorData[2];
 
-		// ... Maybe even save it as an SCNVector3 for later use ...
+			// ... Maybe even save it as an SCNVector3 for later use ...
 		vertices[i] = SCNVector3Make(x, y, z);
 		indices[i] = i;
 
-		// ... or just log it
-//		NSLog(@"%f %f %f", x, y, z);
-		//NSLog(@"%@", vertices[i]);
+			// ... or just log it
+			//NSLog(@"%f %f %f", x, y, z);
 	}
 
 	NSData *vertexData = [NSData dataWithBytes:indices length:vectorCount * sizeof(int)];
-//	NSLog(@"%zd", sizeof(NSInteger));
-//	NSLog(@"%zd", sizeof(int));
 	SCNGeometryElement *vertexElement = [SCNGeometryElement geometryElementWithData:vertexData
-																	  primitiveType:SCNGeometryPrimitiveTypePoint 
+																	  primitiveType:SCNGeometryPrimitiveTypePoint
+																	 primitiveCount:vectorCount
+																	  bytesPerIndex:sizeof(int)];
+	SCNGeometrySource *verticesSource = [SCNGeometrySource geometrySourceWithVertices:vertices count:vectorCount];
+	SCNGeometry *verticesGeometry = [SCNGeometry geometryWithSources:@[verticesSource] elements:@[vertexElement]];
+	SCNNode *resultNode = [SCNNode nodeWithGeometry:verticesGeometry];
+	NSLog(@"%@ %zd vertices", self.name, vectorCount);
+	return resultNode;
+}
+
+- (nullable SCNNode *)wireframeNode;
+{
+		// David  Rönnqvist
+		// http://stackoverflow.com/questions/17250501/extracting-vertices-from-scenekit?rq=1
+
+	SCNGeometry *geometry = self.geometry;
+
+		// Get the vertex sources
+	NSArray *vertexSources = [geometry geometrySourcesForSemantic:SCNGeometrySourceSemanticVertex];
+
+		//	for (SCNGeometrySource *source in vertexSources) {
+		//		NSLog(@"source %@ %zd", source, source.vectorCount);
+		//	}
+		// Get the first source
+	SCNGeometrySource *vertexSource = vertexSources[0]; // TODO: Parse all the sources
+
+	NSInteger stride = vertexSource.dataStride; // in bytes
+	NSInteger offset = vertexSource.dataOffset; // in bytes
+
+	NSInteger componentsPerVector = vertexSource.componentsPerVector;
+	NSInteger bytesPerVector = componentsPerVector * vertexSource.bytesPerComponent;
+	NSInteger vectorCount = vertexSource.vectorCount;
+
+	SCNVector3 vertices[vectorCount]; // A new array for vertices
+	int indices[vectorCount];
+
+		// for each vector, read the bytes
+	for (int i=0; i < vectorCount; i++) {
+
+			// Assuming that bytes per component is 4 (a float)
+			// If it was 8 then it would be a double (aka CGFloat)
+		float vectorData[componentsPerVector];
+
+			// The range of bytes for this vector
+		NSRange byteRange = NSMakeRange(i*stride + offset, // Start at current stride + offset
+										bytesPerVector);   // and read the length of one vector
+
+			// Read into the vector data buffer
+		[vertexSource.data getBytes:&vectorData range:byteRange];
+
+			// At this point you can read the data from the float array
+		float x = vectorData[0];
+		float y = vectorData[1];
+		float z = vectorData[2];
+
+			// ... Maybe even save it as an SCNVector3 for later use ...
+		vertices[i] = SCNVector3Make(x, y, z);
+		indices[i] = i;
+
+			// ... or just log it
+			//NSLog(@"%f %f %f", x, y, z);
+	}
+
+	NSData *vertexData = [NSData dataWithBytes:indices length:vectorCount * sizeof(int)];
+	SCNGeometryElement *vertexElement = [SCNGeometryElement geometryElementWithData:vertexData
+																	  primitiveType:SCNGeometryPrimitiveTypePoint
 																	 primitiveCount:vectorCount
 																	  bytesPerIndex:sizeof(int)];
 	SCNGeometrySource *verticesSource = [SCNGeometrySource geometrySourceWithVertices:vertices count:vectorCount];

@@ -16,6 +16,14 @@
 		2B55BABF1DD92FEF00B17EFE /* Geometry_DissectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BABE1DD92FEF00B17EFE /* Geometry_DissectionUITests.swift */; };
 		2B55BACD1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */; };
 		2B55BAD11DD940CC00B17EFE /* SCNNode+NodeComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */; };
+		2BC809241DDC0BAA00A1A611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC809231DDC0BAA00A1A611 /* AppDelegate.swift */; };
+		2BC809261DDC0BAA00A1A611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC809251DDC0BAA00A1A611 /* ViewController.swift */; };
+		2BC809281DDC0BAA00A1A611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC809271DDC0BAA00A1A611 /* Assets.xcassets */; };
+		2BC8092B1DDC0BAA00A1A611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC809291DDC0BAA00A1A611 /* Main.storyboard */; };
+		2BC809361DDC0BAA00A1A611 /* Geometry_Dissection_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC809351DDC0BAA00A1A611 /* Geometry_Dissection_MacTests.swift */; };
+		2BC809411DDC0BAA00A1A611 /* Geometry_Dissection_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC809401DDC0BAA00A1A611 /* Geometry_Dissection_MacUITests.swift */; };
+		2BC8094D1DDC0CB300A1A611 /* SCNScene+PrimitivesSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */; };
+		2BC8094E1DDC0CB300A1A611 /* SCNNode+NodeComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +41,24 @@
 			remoteGlobalIDString = 2B55BA9A1DD92FEF00B17EFE;
 			remoteInfo = "Geometry Dissection";
 		};
+		2BC809321DDC0BAA00A1A611 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B55BA931DD92FEF00B17EFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BC809201DDC0BAA00A1A611;
+			remoteInfo = "Geometry Dissection Mac";
+		};
+		2BC8093D1DDC0BAA00A1A611 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B55BA931DD92FEF00B17EFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BC809201DDC0BAA00A1A611;
+			remoteInfo = "Geometry Dissection Mac";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B12D2D31DDC1F9F00C8CC7A /* Geometry Dissection-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Geometry Dissection-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B55BA9B1DD92FEF00B17EFE /* Geometry Dissection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Geometry Dissection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B55BA9E1DD92FEF00B17EFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B55BAA01DD92FEF00B17EFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +76,18 @@
 		2B55BACE1DD940CB00B17EFE /* Geometry Dissection-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Geometry Dissection-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B55BACF1DD940CC00B17EFE /* SCNNode+NodeComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCNNode+NodeComponents.h"; sourceTree = "<group>"; };
 		2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCNNode+NodeComponents.m"; sourceTree = "<group>"; };
+		2BC809211DDC0BAA00A1A611 /* Geometry Dissection Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Geometry Dissection Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC809231DDC0BAA00A1A611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BC809251DDC0BAA00A1A611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BC809271DDC0BAA00A1A611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BC8092A1DDC0BAA00A1A611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BC8092C1DDC0BAA00A1A611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BC809311DDC0BAA00A1A611 /* Geometry Dissection MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Geometry Dissection MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC809351DDC0BAA00A1A611 /* Geometry_Dissection_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry_Dissection_MacTests.swift; sourceTree = "<group>"; };
+		2BC809371DDC0BAA00A1A611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BC8093C1DDC0BAA00A1A611 /* Geometry Dissection MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Geometry Dissection MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC809401DDC0BAA00A1A611 /* Geometry_Dissection_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry_Dissection_MacUITests.swift; sourceTree = "<group>"; };
+		2BC809421DDC0BAA00A1A611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +112,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2BC8091E1DDC0BAA00A1A611 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC8092E1DDC0BAA00A1A611 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC809391DDC0BAA00A1A611 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +142,9 @@
 				2B55BA9D1DD92FEF00B17EFE /* Geometry Dissection */,
 				2B55BAB21DD92FEF00B17EFE /* Geometry DissectionTests */,
 				2B55BABD1DD92FEF00B17EFE /* Geometry DissectionUITests */,
+				2BC809221DDC0BAA00A1A611 /* Geometry Dissection Mac */,
+				2BC809341DDC0BAA00A1A611 /* Geometry Dissection MacTests */,
+				2BC8093F1DDC0BAA00A1A611 /* Geometry Dissection MacUITests */,
 				2B55BA9C1DD92FEF00B17EFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +155,9 @@
 				2B55BA9B1DD92FEF00B17EFE /* Geometry Dissection.app */,
 				2B55BAAF1DD92FEF00B17EFE /* Geometry DissectionTests.xctest */,
 				2B55BABA1DD92FEF00B17EFE /* Geometry DissectionUITests.xctest */,
+				2BC809211DDC0BAA00A1A611 /* Geometry Dissection Mac.app */,
+				2BC809311DDC0BAA00A1A611 /* Geometry Dissection MacTests.xctest */,
+				2BC8093C1DDC0BAA00A1A611 /* Geometry Dissection MacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,9 +167,7 @@
 			children = (
 				2B55BA9E1DD92FEF00B17EFE /* AppDelegate.swift */,
 				2B55BAA01DD92FEF00B17EFE /* ViewController.swift */,
-				2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */,
-				2B55BACF1DD940CC00B17EFE /* SCNNode+NodeComponents.h */,
-				2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */,
+				2BC8094C1DDC0C9400A1A611 /* Shared Node Code */,
 				2B55BAA21DD92FEF00B17EFE /* Main.storyboard */,
 				2B55BAA51DD92FEF00B17EFE /* Assets.xcassets */,
 				2B55BAA71DD92FEF00B17EFE /* LaunchScreen.storyboard */,
@@ -133,6 +193,47 @@
 				2B55BAC01DD92FEF00B17EFE /* Info.plist */,
 			);
 			path = "Geometry DissectionUITests";
+			sourceTree = "<group>";
+		};
+		2BC809221DDC0BAA00A1A611 /* Geometry Dissection Mac */ = {
+			isa = PBXGroup;
+			children = (
+				2BC809231DDC0BAA00A1A611 /* AppDelegate.swift */,
+				2BC809251DDC0BAA00A1A611 /* ViewController.swift */,
+				2BC809271DDC0BAA00A1A611 /* Assets.xcassets */,
+				2BC809291DDC0BAA00A1A611 /* Main.storyboard */,
+				2BC8092C1DDC0BAA00A1A611 /* Info.plist */,
+				2B12D2D31DDC1F9F00C8CC7A /* Geometry Dissection-Bridging-Header.h */,
+			);
+			path = "Geometry Dissection Mac";
+			sourceTree = "<group>";
+		};
+		2BC809341DDC0BAA00A1A611 /* Geometry Dissection MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				2BC809351DDC0BAA00A1A611 /* Geometry_Dissection_MacTests.swift */,
+				2BC809371DDC0BAA00A1A611 /* Info.plist */,
+			);
+			path = "Geometry Dissection MacTests";
+			sourceTree = "<group>";
+		};
+		2BC8093F1DDC0BAA00A1A611 /* Geometry Dissection MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2BC809401DDC0BAA00A1A611 /* Geometry_Dissection_MacUITests.swift */,
+				2BC809421DDC0BAA00A1A611 /* Info.plist */,
+			);
+			path = "Geometry Dissection MacUITests";
+			sourceTree = "<group>";
+		};
+		2BC8094C1DDC0C9400A1A611 /* Shared Node Code */ = {
+			isa = PBXGroup;
+			children = (
+				2B55BACC1DD9365E00B17EFE /* SCNScene+PrimitivesSamples.swift */,
+				2B55BACF1DD940CC00B17EFE /* SCNNode+NodeComponents.h */,
+				2B55BAD01DD940CC00B17EFE /* SCNNode+NodeComponents.m */,
+			);
+			name = "Shared Node Code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +292,59 @@
 			productReference = 2B55BABA1DD92FEF00B17EFE /* Geometry DissectionUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		2BC809201DDC0BAA00A1A611 /* Geometry Dissection Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BC809491DDC0BAA00A1A611 /* Build configuration list for PBXNativeTarget "Geometry Dissection Mac" */;
+			buildPhases = (
+				2BC8091D1DDC0BAA00A1A611 /* Sources */,
+				2BC8091E1DDC0BAA00A1A611 /* Frameworks */,
+				2BC8091F1DDC0BAA00A1A611 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Geometry Dissection Mac";
+			productName = "Geometry Dissection Mac";
+			productReference = 2BC809211DDC0BAA00A1A611 /* Geometry Dissection Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2BC809301DDC0BAA00A1A611 /* Geometry Dissection MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BC8094A1DDC0BAA00A1A611 /* Build configuration list for PBXNativeTarget "Geometry Dissection MacTests" */;
+			buildPhases = (
+				2BC8092D1DDC0BAA00A1A611 /* Sources */,
+				2BC8092E1DDC0BAA00A1A611 /* Frameworks */,
+				2BC8092F1DDC0BAA00A1A611 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BC809331DDC0BAA00A1A611 /* PBXTargetDependency */,
+			);
+			name = "Geometry Dissection MacTests";
+			productName = "Geometry Dissection MacTests";
+			productReference = 2BC809311DDC0BAA00A1A611 /* Geometry Dissection MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2BC8093B1DDC0BAA00A1A611 /* Geometry Dissection MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BC8094B1DDC0BAA00A1A611 /* Build configuration list for PBXNativeTarget "Geometry Dissection MacUITests" */;
+			buildPhases = (
+				2BC809381DDC0BAA00A1A611 /* Sources */,
+				2BC809391DDC0BAA00A1A611 /* Frameworks */,
+				2BC8093A1DDC0BAA00A1A611 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BC8093E1DDC0BAA00A1A611 /* PBXTargetDependency */,
+			);
+			name = "Geometry Dissection MacUITests";
+			productName = "Geometry Dissection MacUITests";
+			productReference = 2BC8093C1DDC0BAA00A1A611 /* Geometry Dissection MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +373,23 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2B55BA9A1DD92FEF00B17EFE;
 					};
+					2BC809201DDC0BAA00A1A611 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TW8SJXYFP5;
+						ProvisioningStyle = Automatic;
+					};
+					2BC809301DDC0BAA00A1A611 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TW8SJXYFP5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2BC809201DDC0BAA00A1A611;
+					};
+					2BC8093B1DDC0BAA00A1A611 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TW8SJXYFP5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2BC809201DDC0BAA00A1A611;
+					};
 				};
 			};
 			buildConfigurationList = 2B55BA961DD92FEF00B17EFE /* Build configuration list for PBXProject "Geometry Dissection" */;
@@ -237,6 +408,9 @@
 				2B55BA9A1DD92FEF00B17EFE /* Geometry Dissection */,
 				2B55BAAE1DD92FEF00B17EFE /* Geometry DissectionTests */,
 				2B55BAB91DD92FEF00B17EFE /* Geometry DissectionUITests */,
+				2BC809201DDC0BAA00A1A611 /* Geometry Dissection Mac */,
+				2BC809301DDC0BAA00A1A611 /* Geometry Dissection MacTests */,
+				2BC8093B1DDC0BAA00A1A611 /* Geometry Dissection MacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,6 +434,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2B55BAB81DD92FEF00B17EFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC8091F1DDC0BAA00A1A611 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC809281DDC0BAA00A1A611 /* Assets.xcassets in Resources */,
+				2BC8092B1DDC0BAA00A1A611 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC8092F1DDC0BAA00A1A611 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC8093A1DDC0BAA00A1A611 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,6 +493,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2BC8091D1DDC0BAA00A1A611 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC8094E1DDC0CB300A1A611 /* SCNNode+NodeComponents.m in Sources */,
+				2BC8094D1DDC0CB300A1A611 /* SCNScene+PrimitivesSamples.swift in Sources */,
+				2BC809261DDC0BAA00A1A611 /* ViewController.swift in Sources */,
+				2BC809241DDC0BAA00A1A611 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC8092D1DDC0BAA00A1A611 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC809361DDC0BAA00A1A611 /* Geometry_Dissection_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BC809381DDC0BAA00A1A611 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC809411DDC0BAA00A1A611 /* Geometry_Dissection_MacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -308,6 +532,16 @@
 			isa = PBXTargetDependency;
 			target = 2B55BA9A1DD92FEF00B17EFE /* Geometry Dissection */;
 			targetProxy = 2B55BABB1DD92FEF00B17EFE /* PBXContainerItemProxy */;
+		};
+		2BC809331DDC0BAA00A1A611 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BC809201DDC0BAA00A1A611 /* Geometry Dissection Mac */;
+			targetProxy = 2BC809321DDC0BAA00A1A611 /* PBXContainerItemProxy */;
+		};
+		2BC8093E1DDC0BAA00A1A611 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BC809201DDC0BAA00A1A611 /* Geometry Dissection Mac */;
+			targetProxy = 2BC8093D1DDC0BAA00A1A611 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -326,6 +560,14 @@
 				2B55BAA81DD92FEF00B17EFE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2BC809291DDC0BAA00A1A611 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BC8092A1DDC0BAA00A1A611 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -513,6 +755,116 @@
 			};
 			name = Release;
 		};
+		2BC809431DDC0BAA00A1A611 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TW8SJXYFP5;
+				INFOPLIST_FILE = "Geometry Dissection Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Geometry Dissection Mac/Geometry Dissection-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2BC809441DDC0BAA00A1A611 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TW8SJXYFP5;
+				INFOPLIST_FILE = "Geometry Dissection Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Geometry Dissection Mac/Geometry Dissection-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2BC809451DDC0BAA00A1A611 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TW8SJXYFP5;
+				INFOPLIST_FILE = "Geometry Dissection MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geometry Dissection Mac.app/Contents/MacOS/Geometry Dissection Mac";
+			};
+			name = Debug;
+		};
+		2BC809461DDC0BAA00A1A611 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TW8SJXYFP5;
+				INFOPLIST_FILE = "Geometry Dissection MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geometry Dissection Mac.app/Contents/MacOS/Geometry Dissection Mac";
+			};
+			name = Release;
+		};
+		2BC809471DDC0BAA00A1A611 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TW8SJXYFP5;
+				INFOPLIST_FILE = "Geometry Dissection MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Geometry Dissection Mac";
+			};
+			name = Debug;
+		};
+		2BC809481DDC0BAA00A1A611 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TW8SJXYFP5;
+				INFOPLIST_FILE = "Geometry Dissection MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.halmueller.Geometry-Dissection-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Geometry Dissection Mac";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -532,6 +884,7 @@
 				2B55BAC51DD92FEF00B17EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B55BAC61DD92FEF00B17EFE /* Build configuration list for PBXNativeTarget "Geometry DissectionTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +893,7 @@
 				2B55BAC81DD92FEF00B17EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B55BAC91DD92FEF00B17EFE /* Build configuration list for PBXNativeTarget "Geometry DissectionUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +902,34 @@
 				2B55BACB1DD92FEF00B17EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BC809491DDC0BAA00A1A611 /* Build configuration list for PBXNativeTarget "Geometry Dissection Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC809431DDC0BAA00A1A611 /* Debug */,
+				2BC809441DDC0BAA00A1A611 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BC8094A1DDC0BAA00A1A611 /* Build configuration list for PBXNativeTarget "Geometry Dissection MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC809451DDC0BAA00A1A611 /* Debug */,
+				2BC809461DDC0BAA00A1A611 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BC8094B1DDC0BAA00A1A611 /* Build configuration list for PBXNativeTarget "Geometry Dissection MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BC809471DDC0BAA00A1A611 /* Debug */,
+				2BC809481DDC0BAA00A1A611 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

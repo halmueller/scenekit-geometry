@@ -12,9 +12,11 @@ import SceneKit
 #if os(iOS) || os(tvOS)
 	private typealias MyColor = UIColor
 	private typealias MyFont = UIFont
+	private typealias MySCNFloat = Float
 #elseif os(OSX)
 	private typealias MyColor = NSColor
 	private typealias MyFont = NSFont
+	private typealias MySCNFloat = CGFloat
 #endif
 
 extension SCNScene {
@@ -40,7 +42,7 @@ extension SCNScene {
 
 		let carousel = SCNNode()
 		carousel.name = "carousel"
-		carousel.position = SCNVector3Make(0, Float(objectSize), 0)
+		carousel.position = SCNVector3Make(0, MySCNFloat(objectSize), 0)
 
 		let capsule = SCNCapsule(capRadius: CGFloat(quarterObject), height: objectSize)
 		capsule.name = "capsule"
@@ -105,13 +107,13 @@ extension SCNScene {
 			let angle = CGFloat(angleIncrement * Double(index))
 			let x = carouselRadius * cos(angle)
 			let y = carouselRadius * sin(angle)
-			node.position = SCNVector3Make(Float(x), 0, Float(y))
-			node.eulerAngles.y = Float(-1.0 * angle)
+			node.position = SCNVector3Make(MySCNFloat(x), 0, MySCNFloat(y))
+			node.eulerAngles.y = MySCNFloat(-1.0 * angle)
 			carousel.addChildNode(node)
 			if let verticesNode = node.vertices() {
 				carousel.addChildNode(verticesNode)
 				verticesNode.geometry?.firstMaterial = pointCloudMaterial
-				verticesNode.position = SCNVector3Make(Float(x), Float(objectSize * 2), Float(y))
+				verticesNode.position = SCNVector3Make(MySCNFloat(x), MySCNFloat(objectSize * 2), MySCNFloat(y))
 				verticesNode.eulerAngles = node.eulerAngles
 			}
 			index += 1

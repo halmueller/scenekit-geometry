@@ -10,6 +10,7 @@
 
 @interface SCNNode (NodeComponents)
 - (nullable SCNNode *)verticesNode;
+- (nullable SCNNode *)wireframeNode;
 NS_ASSUME_NONNULL_BEGIN
 - (void)buildVisualizationsPositionsNode:(SCNNode * __strong *)verticesNode normalsNode:(SCNNode * __strong *)normalsNode;
 NS_ASSUME_NONNULL_END
