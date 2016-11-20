@@ -155,10 +155,10 @@
 				memset(array, 0, 3);
 
 				NSRange elementByteRange = NSMakeRange(indexPrimitive * bytesPerPrimitive, bytesPerPrimitive);
-				NSLog(@"elementByteRange location %zd length %zd", elementByteRange.location, elementByteRange.length);
+				NSLog(@"elementByteRange location %zd length %zd bpi %zd", elementByteRange.location, elementByteRange.length, element.bytesPerIndex);
 				[element.data getBytes:&array range:elementByteRange];
 
-				NSLog(@"element %zd: %zd %zd %zd", indexPrimitive, array[0], array[1], array[2]);
+//				NSLog(@"element %zd: %zd %zd %zd", indexPrimitive, array[0], array[1], array[2]);
 				endpointIndices[endpointCount] = array[0];
 				endpointIndices[endpointCount+1] = array[1];
 				endpointIndices[endpointCount+2] = array[1];
@@ -182,7 +182,7 @@
 	NSData *vertexData = [NSData dataWithBytes:vertexIndices length:vertexCount * sizeof(int)];
 	SCNGeometryElement *vertexElement = [SCNGeometryElement geometryElementWithData:vertexData
 																	  primitiveType:SCNGeometryPrimitiveTypePoint
-																	 primitiveCount:vertexCount
+																	 primitiveCount:vertexCount/2
 																	  bytesPerIndex:sizeof(int)];
 	SCNGeometrySource *verticesSource = [SCNGeometrySource geometrySourceWithVertices:vertices count:vertexCount];
 	SCNGeometry *verticesGeometry = [SCNGeometry geometryWithSources:@[verticesSource] elements:lineGeometries];

@@ -90,8 +90,14 @@ extension SCNScene {
 		let box = SCNBox(width: objectSize/2, height: objectSize, length: objectSize, chamferRadius: 0)
 		box.name = "regular box"
 
-		let geometries = [capsule, standardSphere, tube, geodesicSphere, pyramid, pyramid2, text, plane, cone1, cone2, torus, cylinder, box, chamferedBox]
-		//let geometries = [pyramid, box]
+		// geometries0: all samples. geometrie1: no artifcats. geometries2: artifacts.
+		let geometries0 =
+			[capsule, standardSphere, tube, geodesicSphere, pyramid, pyramid2, text, plane, cone1, cone2, torus, cylinder, box, chamferedBox]
+		let geometries1 =
+			[                         tube,                 pyramid, pyramid2, text, plane, cone1, cone2,        cylinder, box, chamferedBox]
+		let geometries2 =
+			[capsule, standardSphere,       geodesicSphere,                                               torus]
+		let geometries = geometries1
 
 		let pointCloudMaterial = SCNMaterial()
 		pointCloudMaterial.isDoubleSided = true
